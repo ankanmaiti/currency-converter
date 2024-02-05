@@ -1,25 +1,16 @@
-import { useState } from "react";
+import cn from "../utils/tailwindcss";
 
-export default function AmountInput({ label, uniqueId }) {
-  const [amount, setAmount] = useState(0);
+export default function AmountInput({ label, uniqueId, className, ...props }) {
 
   return (
     <>
-      <div className="flex flex-col">
-        <label
-          htmlFor={`${uniqueId}-amount`}
-          className="mb-1 text-sm capitalize text-slate-500"
-        >
-          {label}
-        </label>
-
-        {/* input amount field */}
+      <div className="mb-4 flex flex-col space-y-1">
+        <label for={`${uniqueId}-amount`} className="mr-2">{ label }</label>
         <input
           type="number"
           id={`${uniqueId}-amount`}
-          className="rounded-md py-1 text-black outline-none"
-          value={amount}
-          onChange={(e) => setAmount(e.target.value)}
+          className={ cn("rounded-md border border-gray-300 px-2 py-1 focus:outline-none", className) }
+          {...props}
         />
       </div>
     </>
