@@ -1,9 +1,5 @@
 import { useId } from "react";
 
-import AmountInput from "./AmountInput";
-import CurrencySelect from './CurrencySelect'
-import Button from './Button'
-
 import SwapIcon from "./Icons/SwapIcon";
 import ArrowsClockwise from "./Icons/ArrowsClockwise";
 
@@ -12,39 +8,40 @@ import CardHeader from "./Card/CardHeader";
 import CardFooter from "./Card/CardFooter";
 import CardBody from "./Card/CardBody";
 
+import Input from "./Input";
+import Button from './Button'
+
+
 export default function CurrencyConverter() {
   const uniqueId = useId()
   return (
     <>
-      <Card className="border-t-4 border-t-blue-600">
+      <Card className="border-t-4 border-t-blue-600 md:max-w-md">
         <CardHeader>
           <h2 className="text-2xl font-bold">Currency Converter</h2>
           <p className="text-sm text-gray-400">Convert your currency in real-time</p>
         </CardHeader>
 
+        <CardBody className="space-y-4">
 
-        <CardBody className="space-y-5" >
+          <Input type="number" uniqueId={uniqueId} label={'Amount'} />
 
-          <AmountInput uniqueId={uniqueId} label={'Amount'} />
-
-          <div className="flex w-full justify-between" >
-            <CurrencySelect className="w-5/12" uniqueId={`${uniqueId}-from`} />
+          <div className="flex" >
+            <Input placeholder="From" uniqueId={`${uniqueId}-from`}/>
             <Button className={"px-4 hover:text-blue-700 border-none transition-colors delay-75"}><SwapIcon /></Button>
-            <CurrencySelect className="w-5/12" uniqueId={`${uniqueId}-to`} />
+            <Input placeholder="To" uniqueId={`${uniqueId}-to`}/>
           </div>
 
           <Button className={"w-full space-x-1 bg-black px-6 text-white transition-colors delay-75 hover:border hover:border-black hover:bg-white hover:text-black"} >
             <ArrowsClockwise  /> {/* use animate-spin for roatation/loading */}
-            <span>Convert</span>
+            <span>Convert</span> {/*when loading set Converting*/}
           </Button>
 
-          <div className="flex flex-col space-y-1">
-            <AmountInput label={'Result'} uniqueId={`${uniqueId}-to`} className={"cursor-not-allowed"} disabled />
-          </div>
+            <Input type="number" label={'Result'} uniqueId={`${uniqueId}-to`} className={"cursor-not-allowed"} disabled />
 
         </CardBody>
 
-        <CardFooter>
+        <CardFooter className={"mt-4"}>
         </CardFooter>
       </Card>
     </>
