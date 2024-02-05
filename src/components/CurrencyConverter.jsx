@@ -20,9 +20,9 @@ export default function CurrencyConverter() {
           <AmountInput uniqueId={uniqueId} label={'Amount'} />
 
           <div className="flex w-full justify-between" >
-            <CurrencySelect className="w-4/12" uniqueId={`${uniqueId}-from`} />
-            <Button className={"hover:text-blue-700 border-none transition-colors delay-75"}><SwapIcon /></Button>
-            <CurrencySelect className="w-4/12" uniqueId={`${uniqueId}-to`} />
+            <CurrencySelect className="w-5/12" uniqueId={`${uniqueId}-from`} />
+            <Button className={"px-4 hover:text-blue-700 border-none transition-colors delay-75"}><SwapIcon /></Button>
+            <CurrencySelect className="w-5/12" uniqueId={`${uniqueId}-to`} />
           </div>
 
           <Button className={"w-full bg-black px-6 text-white transition-colors delay-75 hover:border hover:border-black hover:bg-white hover:text-black"} >Convert</Button>

@@ -5,7 +5,7 @@ export default function AmountInput({ label, uniqueId, className, ...props }) {
   return (
     <>
       <div className="mb-4 flex flex-col space-y-1">
-        <label for={`${uniqueId}-amount`} className="mr-2">{ label }</label>
+        <label htmlFor={`${uniqueId}-amount`} className="mr-2">{ label }</label>
         <input
           type="number"
           id={`${uniqueId}-amount`}
