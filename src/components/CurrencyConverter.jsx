@@ -11,7 +11,6 @@ import CardBody from "./Card/CardBody";
 import Input from "./Input";
 import Button from './Button'
 
-
 export default function CurrencyConverter() {
   const uniqueId = useId()
   return (
@@ -21,6 +20,7 @@ export default function CurrencyConverter() {
           <h2 className="text-2xl font-bold">Currency Converter</h2>
           <p className="text-sm text-gray-400">Convert your currency in real-time</p>
         </CardHeader>
+
 
         <CardBody className="space-y-4">
 
@@ -37,7 +37,7 @@ export default function CurrencyConverter() {
             <span>Convert</span> {/*when loading set Converting*/}
           </Button>
 
-            <Input type="number" label={'Result'} uniqueId={`${uniqueId}-to`} className={"cursor-not-allowed"} disabled />
+            <Input type="number" label={'Result'} uniqueId={`${uniqueId}-result`} className={"cursor-not-allowed"} disabled />
 
         </CardBody>
 
