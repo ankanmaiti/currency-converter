@@ -1,5 +1,5 @@
 import React from 'react'
-import cn from '../../utils/tailwindcss'
+import cn from '@utils/tailwindcss'
 
 export default function CardHeader({ className, title, tagline }) {
   return (

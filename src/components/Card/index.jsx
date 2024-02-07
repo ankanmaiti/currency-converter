@@ -1,4 +1,4 @@
-import cn from "../../utils/tailwindcss";
+import cn from "@utils/tailwindcss";
 
 export default function Card({ className, children }) {
   return (

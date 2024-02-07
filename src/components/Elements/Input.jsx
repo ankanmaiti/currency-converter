@@ -1,27 +1,32 @@
-import cn from "../../utils/tailwindcss";
+import cn from "@utils/tailwindcss";
+import { useId } from "react";
 
 export default function Input({
-  placeholder = "",
-  type = "text",
   label,
-  id,
   className,
   value,
-  onChange
+  onChange,
+  placeholder = "",
+  disabled = false,
+  type = "text",
 }) {
+  const id = useId()
   return (
-    <div className="flex flex-col">
-      <label htmlFor={`${id}-amount`} className="mr-2">{label}</label>
+
+    <div className={cn("flex flex-col text-blue-600", className)}>
+      {!!label && <label htmlFor={id} >{label}</label>}
       <input
         type={type}
         placeholder={placeholder}
-        id={`${id}-amount`}
+        id={id}
         className={cn(
-          "w-full rounded-md border border-gray-300 px-2 py-1 focus:outline-none",
-          className,
+          "w-full uppercase rounded-md border border-blue-300 px-2 py-1 outline-none",
+          disabled && "cursor-not-allowed text-red-400 border-none bg-blue-100"
         )}
         value={value}
         onChange={onChange}
+        spellCheck="false"
+        disabled={disabled}
       />
     </div>
   );

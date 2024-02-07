@@ -7,14 +7,3 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-body {
-  width: 100dvw;
-  height: 100dvh;
-
-  background-color: #242424;
-  background-image: url("./assets/desktop-computer.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
