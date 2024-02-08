@@ -13,11 +13,4 @@ export default defineConfig({
       '@contexts': '/src/contexts',
     },
   },
-  server: {
-    proxy: {
-      '/api/currencies' : {
-        target: 'https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies'
-      },
-    },
-  },
 })

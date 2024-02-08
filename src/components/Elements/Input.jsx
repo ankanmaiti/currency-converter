@@ -13,7 +13,7 @@ export default function Input({
   const id = useId()
   return (
 
-    <div className={cn("flex flex-col text-blue-600", className)}>
+    <div className={cn("flex flex-col space-y-[.15rem] text-blue-600", className)}>
       {!!label && <label htmlFor={id} >{label}</label>}
       <input
         type={type}
@@ -21,7 +21,8 @@ export default function Input({
         id={id}
         className={cn(
           "w-full uppercase rounded-md border border-blue-300 px-2 py-1 outline-none",
-          disabled && "cursor-not-allowed text-red-400 border-none bg-blue-100"
+          disabled && "cursor-not-allowed text-red-400 border-none bg-blue-100/80",
+          disabled && value && "cursor-default bg-blue-100/60"
         )}
         value={value}
         onChange={onChange}
