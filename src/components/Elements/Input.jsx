@@ -6,9 +6,11 @@ export default function Input({
   className,
   value,
   onChange,
+  max,
   placeholder = "",
   disabled = false,
   type = "text",
+  min="1",
 }) {
   const id = useId()
   return (
@@ -28,6 +30,8 @@ export default function Input({
         onChange={onChange}
         spellCheck="false"
         disabled={disabled}
+        min={min}
+        max={max}
       />
     </div>
   );

@@ -20,7 +20,7 @@ export default function Conversion() {
         type="number"
         label='Converted Amount'
         className="cursor-not-allowed"
-        value={convertedAmount}
+        value={convertedAmount.toFixed(3)}
         disabled
       />
     </div>

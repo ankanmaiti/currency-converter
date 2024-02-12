@@ -6,9 +6,9 @@ import "./index.css";
 import { CurrencyExcangeRateProvider } from "./contexts/CurrencyExcnageRate.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <StrictMode>
+  // <StrictMode>
     <CurrencyExcangeRateProvider>
       <App />
     </CurrencyExcangeRateProvider>
-  </StrictMode>,
+  // </StrictMode>,
 );

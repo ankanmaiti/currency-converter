@@ -10,7 +10,6 @@ export default function Currencies() {
   const { from, to, setFrom, setTo } = useCurrencyExchangeRate()
 
   function handleSwap() {
-    const t = from
     setFrom(to)
     setTo(from)
   }
@@ -22,12 +21,16 @@ export default function Currencies() {
           placeholder="From"
           value={from}
           onChange={ e=>setFrom(e.target.value) }
+          min="3"
+          max="10"
         />
         <Button onClick={handleSwap}><SwapIcon/></Button>
         <Input
           placeholder="To"
           value={to}
           onChange={ e=>setTo(e.target.value) }
+          min="3"
+          max="10"
         />
       </div>
     </>
